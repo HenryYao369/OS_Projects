@@ -1,10 +1,11 @@
 """A simulation for experimenting with multiple threads and processes"""
 
-from threading  import Thread
+from threading import Thread
+import sys  # ??
+from subprocess import Popen  # subprocess
+
 import time
-import sys
 import random
-from subprocess import Popen
 
 ################################################################################
 ## unit of work ################################################################

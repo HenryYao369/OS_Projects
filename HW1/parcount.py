@@ -7,13 +7,21 @@ from subprocess import Popen  # subprocess
 import time
 import random
 
+# from Queue import Queue
+
+
+# Queue q = Queue()
+
+
 ################################################################################
 ## unit of work ################################################################
 ################################################################################
 
 def do_step(i):
   """simulates a task that requires a bit of processing and some I/O"""
-  time.sleep(0.01)
+
+  time.sleep(0.01)  # IO bound.
+
   random.seed(i)
   val = random.gauss(0,2)
   if (val > 1):
@@ -57,15 +65,38 @@ class ThreadedWorker(Thread):
     """execute the worker thread's work"""
     self.result = do_steps(self.k, self.n, self.N)
 
+
+
 def run_threaded(num_threads, N):
   """use num_thread threads to perform N steps"""
   # TODO: create num_threads workers
   # TODO: run them
   # TODO: collect the results and return their sum
+
+  sum = 0
+
+  threads = []
+  for i in xrange(num_threads):
+    t = ThreadedWorker(i,num_threads,N)
+    threads.append(t)
+
+  for t in threads:
+    # t.setDaemon(True)
+    t.start()
+
+  for t in threads:
+    t.join()
+
+  for t in threads:
+    sum += t.result
+
+  return sum
+
   # Note: use the threading module from the python standard library
   # Note: import threading; help(threading.Thread)
   # Note: be sure that your implementation is concurrent!
-  pass
+
+  # pass
 
 ################################################################################
 ## multiprocess implementation #################################################

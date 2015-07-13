@@ -15,7 +15,13 @@ import random
 def do_step(i):
   """simulates a task that requires a bit of processing and some I/O"""
 
-  time.sleep(0.01)  # IO bound.
+  # time.sleep(0.01)  # IO bound.
+
+  # CPU bound:
+  c = 0
+  for ii in xrange(200):
+      for jj in xrange(300):
+          c += ii*jj
 
   random.seed(i)
   val = random.gauss(0,2)
@@ -103,7 +109,7 @@ def run_parent(num_children, N):
   subprocesses = []
 
   for i in xrange(num_children):
-    p = Popen([sys.executable, sys.argv[0],'child',str(num_children),str(i)]);
+    p = Popen([sys.executable, sys.argv[0],'child',str(num_children),str(i)])  # let program launch program: cool!!
     subprocesses.append(p)
 
   sum = 0

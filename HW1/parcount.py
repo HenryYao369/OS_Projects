@@ -7,11 +7,6 @@ from subprocess import Popen  # subprocess
 import time
 import random
 
-# from Queue import Queue
-
-
-# Queue q = Queue()
-
 
 ################################################################################
 ## unit of work ################################################################
@@ -96,7 +91,6 @@ def run_threaded(num_threads, N):
   # Note: import threading; help(threading.Thread)
   # Note: be sure that your implementation is concurrent!
 
-  # pass
 
 ################################################################################
 ## multiprocess implementation #################################################
@@ -105,6 +99,19 @@ def run_threaded(num_threads, N):
 def run_parent(num_children, N):
   """use num_children subprocesses to perform N steps"""
   # TODO: fork num_children subprocesses to compute the results
+
+  subprocesses = []
+
+  for i in xrange(num_children):
+    p = Popen([sys.executable, sys.argv[0],'child',str(num_children),str(i)]);
+    subprocesses.append(p)
+
+  sum = 0
+  for p in subprocesses:
+    sum += p.wait() # key: wait all subproc to terminate, and return their exitcode!
+
+  return sum
+
   # Note: use the python subprocess module
   # Note: use sys.executable to find python itself, and sys.argv[0] to get the
   #       name of the python script to run
@@ -114,12 +121,16 @@ def run_parent(num_children, N):
   #       but since we're only trying to communicate a single integer from the
   #       child process to the parent, it suits our purposes.
   # Note: be sure that your implementation is concurrent!
-  pass
+
 
 def run_child(N):
   """do the work of a single subprocess"""
   # TODO: do the work for the ith (of n) children
-  pass
+
+  n = int(sys.argv[2])
+  k = int(sys.argv[3])
+
+  return do_steps(k, n, N)
 
 ################################################################################
 ## program main function #######################################################
@@ -145,7 +156,8 @@ if __name__ == '__main__':
 
   if len(sys.argv) <= 1:
     sys.exit(usage())
-  command = sys.argv[1]
+  command = sys.argv[1]  # pay attention to this way of parsing!! One of keys to implement subprocess(stuck here!!)
+  # Using command == 'child' is the key!!!
 
   if command == "sequential":
     print run_sequential(N)

@@ -1,5 +1,6 @@
 from threading import Thread, Lock, Semaphore
 
+
 class Add(Thread):
 
     def __init__(self):
@@ -9,6 +10,7 @@ class Add(Thread):
         for j in range(10000):
             for i in range(10):
                 matrix[i] = matrix[i] + 1
+
 
 class Sub(Thread):
 

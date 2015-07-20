@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2e4963-7e7b-4434-a389-e284828cb7e3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/incr.py" afterPath="$PROJECT_DIR$/HW2/incr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW1/threading-test/test.py" afterPath="$PROJECT_DIR$/HW1/threading-test/test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/HW1/figure_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/HW1/figure_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/HW1/figure_22.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/bridge.py" afterPath="$PROJECT_DIR$/HW2/bridge.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/paint.py" afterPath="$PROJECT_DIR$/HW2/paint.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW1/parcount.py" afterPath="$PROJECT_DIR$/HW1/parcount.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/parcount.py" afterPath="$PROJECT_DIR$/HW2/parcount.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/zigzag.py" afterPath="$PROJECT_DIR$/HW2/zigzag.py" />
     </list>
     <ignored path="OS_Projects.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +26,10 @@
     <SUITE FILE_PATH="coverage/OS_Projects$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1436646574422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1/threading-test" />
     <SUITE FILE_PATH="coverage/OS_Projects$plot.coverage" NAME="plot Coverage Results" MODIFIED="1436757303535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1" />
     <SUITE FILE_PATH="coverage/OS_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1436646472090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1" />
-    <SUITE FILE_PATH="coverage/OS_Projects$parcount.coverage" NAME="parcount Coverage Results" MODIFIED="1437185513498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1" />
+    <SUITE FILE_PATH="coverage/OS_Projects$parcount.coverage" NAME="parcount Coverage Results" MODIFIED="1437321049530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1" />
     <SUITE FILE_PATH="coverage/OS_Projects$ex1.coverage" NAME="ex1 Coverage Results" MODIFIED="1436655689559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW1/threading-test" />
     <SUITE FILE_PATH="coverage/OS_Projects$incr.coverage" NAME="incr Coverage Results" MODIFIED="1436981035599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
-    <SUITE FILE_PATH="coverage/OS_Projects$bridge.coverage" NAME="bridge Coverage Results" MODIFIED="1436982840774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
+    <SUITE FILE_PATH="coverage/OS_Projects$bridge.coverage" NAME="bridge Coverage Results" MODIFIED="1437356902678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
     <SUITE FILE_PATH="coverage/OS_Projects$zigzag.coverage" NAME="zigzag Coverage Results" MODIFIED="1436981091668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -40,21 +44,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="bridge.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.0993376" vertical-offset="0" max-vertical-offset="2475">
+              <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+              <folding>
+                <element signature="e#25#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parcount.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HW2/parcount.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="3060">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding>
+                <element signature="e#74#119#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paint.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HW2/paint.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1260">
+              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="incr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW2/incr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="900">
               <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zigzag.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zigzag.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW2/zigzag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54985756" vertical-offset="784" max-vertical-offset="1890">
-              <caret line="78" column="21" selection-start-line="70" selection-start-column="0" selection-end-line="78" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1212" max-vertical-offset="2115">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -68,42 +108,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bridge.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="990">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paint.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HW2/paint.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="678" max-vertical-offset="1140">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parcount.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HW2/parcount.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2925">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="e#74#102#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,12 +126,13 @@
         <option value="$PROJECT_DIR$/HW1/data.txt" />
         <option value="$PROJECT_DIR$/HW1/plot_data.py" />
         <option value="$PROJECT_DIR$/HW1/plot.py" />
-        <option value="$PROJECT_DIR$/HW1/parcount.py" />
-        <option value="$PROJECT_DIR$/HW2/parcount.py" />
-        <option value="$PROJECT_DIR$/HW2/bridge.py" />
         <option value="$PROJECT_DIR$/HW1/threading-test/test.py" />
         <option value="$PROJECT_DIR$/HW2/incr.py" />
         <option value="$PROJECT_DIR$/HW2/zigzag.py" />
+        <option value="$PROJECT_DIR$/HW2/paint.py" />
+        <option value="$PROJECT_DIR$/HW2/parcount.py" />
+        <option value="$PROJECT_DIR$/HW1/parcount.py" />
+        <option value="$PROJECT_DIR$/HW2/bridge.py" />
       </list>
     </option>
   </component>
@@ -260,7 +265,7 @@
       <recent name="$PROJECT_DIR$/HW1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.parcount">
+  <component name="RunManager" selected="Python.bridge">
     <configuration default="false" name="parcount" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,7 +366,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW2/bridge.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -562,8 +569,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.parcount" />
-        <item index="1" class="java.lang.String" itemvalue="Python.bridge" />
+        <item index="0" class="java.lang.String" itemvalue="Python.bridge" />
+        <item index="1" class="java.lang.String" itemvalue="Python.parcount" />
         <item index="2" class="java.lang.String" itemvalue="Python.zigzag" />
         <item index="3" class="java.lang.String" itemvalue="Python.incr" />
         <item index="4" class="java.lang.String" itemvalue="Python.plot" />
@@ -605,10 +612,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3410959" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3410959" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3410959" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -654,27 +661,17 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HW2/zigzag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1125">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#25#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,14 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.9/lib/python2.7/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33259913" vertical-offset="11114" max-vertical-offset="20055">
-          <caret line="751" column="8" selection-start-line="751" selection-start-column="8" selection-end-line="751" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HW1/plot_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03311258" vertical-offset="90" max-vertical-offset="615">
@@ -973,48 +962,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/paint.py">
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.9/lib/python2.7/random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03311258" vertical-offset="60" max-vertical-offset="540">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state vertical-scroll-proportion="2.8874643" vertical-offset="643" max-vertical-offset="13635">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/parcount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2925">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#74#102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/parcount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06622516" vertical-offset="0" max-vertical-offset="2925">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1026,6 +978,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="540">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW2/zigzag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HW2/incr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
@@ -1034,12 +1004,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/zigzag.py">
+    <entry file="file://$PROJECT_DIR$/HW2/paint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54985756" vertical-offset="784" max-vertical-offset="1890">
-          <caret line="78" column="21" selection-start-line="70" selection-start-column="0" selection-end-line="78" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1260">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/parcount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5960265" vertical-offset="450" max-vertical-offset="2865">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW2/parcount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="e#74#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.9/lib/python2.7/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="11998" max-vertical-offset="20055">
+          <caret line="809" column="0" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.0993376" vertical-offset="0" max-vertical-offset="2475">
+          <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+          <folding>
+            <element signature="e#25#81#0" expanded="true" />
           </folding>
         </state>
       </provider>

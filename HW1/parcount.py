@@ -15,13 +15,14 @@ import random
 def do_step(i):
   """simulates a task that requires a bit of processing and some I/O"""
 
-  # time.sleep(0.01)  # IO bound.
+  # IO bound:
+  time.sleep(0.01)
 
   # CPU bound:
-  c = 0
-  for ii in xrange(200):
-      for jj in xrange(300):
-          c += ii*jj
+  # c = 0
+  # for ii in xrange(200):
+  #     for jj in xrange(300):
+  #         c += ii*jj
 
   random.seed(i)
   val = random.gauss(0,2)

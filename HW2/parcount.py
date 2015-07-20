@@ -1,12 +1,16 @@
 """A simulation for experimenting with multiple threads and processes"""
 
-from threading import Thread
+from threading import Thread, Lock, Semaphore
 import sys  # ??
 from subprocess import Popen  # subprocess
 
 import time
 import random
 
+
+shared_sum = 0
+
+semaphore = Semaphore(1)
 
 ################################################################################
 ## unit of work ################################################################
@@ -15,7 +19,8 @@ import random
 def do_step(i):
   """simulates a task that requires a bit of processing and some I/O"""
 
-  time.sleep(0.01)  # IO bound.
+  # IO bound:
+  time.sleep(0.01)
 
   # CPU bound:
   # c = 0
@@ -60,11 +65,15 @@ class ThreadedWorker(Thread):
     self.k      = k
     self.n      = n
     self.N      = N
-    self.result = None
+    # self.result = None
 
   def run(self):
     """execute the worker thread's work"""
-    self.result = do_steps(self.k, self.n, self.N)
+    # self.result = do_steps(self.k, self.n, self.N)
+    global shared_sum
+    semaphore.acquire()
+    shared_sum += do_steps(self.k, self.n, self.N)
+    semaphore.release()
 
 
 
@@ -74,7 +83,7 @@ def run_threaded(num_threads, N):
   # TODO: run them
   # TODO: collect the results and return their sum
 
-  sum = 0
+  # sum = 0
 
   threads = []
   for i in xrange(num_threads):
@@ -88,10 +97,10 @@ def run_threaded(num_threads, N):
   for t in threads:
     t.join()
 
-  for t in threads:
-    sum += t.result
-
-  return sum
+  # for t in threads:
+  #   sum += t.result
+  global shared_sum
+  return shared_sum
 
   # Note: use the threading module from the python standard library
   # Note: import threading; help(threading.Thread)

@@ -43,8 +43,7 @@ class OneLaneBridge(object):
         # variables for debug (and their mutex):
         self.start_count = 1
         self.fin_count = 1
-        self.start_count_mutex = Semaphore(1)
-        self.fin_count_mutex = Semaphore(1)
+        self.printer_mutex = Semaphore(1)
 
 
     def cross(self,direction):
@@ -53,7 +52,7 @@ class OneLaneBridge(object):
         # TODO
 
         # with lock:
-        with self.start_count_mutex:
+        with self.printer_mutex:
             print 'enter_cross:' + str(self.start_count),'direction:', direction
             self.start_count += 1
 
@@ -141,7 +140,7 @@ class OneLaneBridge(object):
                         print 'error 4'
 
 
-        with self.fin_count_mutex:
+        with self.printer_mutex:
             print 'finish ' + str(self.fin_count)
             self.fin_count += 1
 
@@ -149,7 +148,7 @@ class OneLaneBridge(object):
 class Car(Thread):
     def __init__(self, bridge):
         Thread.__init__(self)
-        self.direction = random.randrange(2)
+        self.direction = 1 #random.randrange(2)
         self.wait_time = random.uniform(0.1,0.5)
         self.bridge    = bridge
 

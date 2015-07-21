@@ -19,7 +19,7 @@ class OneLaneBridge(object):
         self.dir = 1  # 0 or 1, both works.
         self.bridge_access = Semaphore()
         self.cars_on_bridge = 0
-        self.mutex = Semaphore()
+        # self.mutex = Semaphore()
 
         # variables for debug (and their mutex):
         self.start_count = 1
@@ -35,7 +35,7 @@ class OneLaneBridge(object):
             print 'enter_cross:' + str(self.start_count),'direction:', direction
             self.start_count += 1
 
-        self.mutex.acquire()
+        # self.mutex.acquire()
         # if(self.dir == -1):
         #     self.dir = direction
 
@@ -44,21 +44,21 @@ class OneLaneBridge(object):
                 self.bridge_access.acquire()
             self.cars_on_bridge += 1
         else:
-            self.mutex.release()
+            # self.mutex.release()
 
             self.bridge_access.acquire()
 
-            self.mutex.acquire()
+            # self.mutex.acquire()
             self.cars_on_bridge += 1
             self.dir = direction
-            self.mutex.release()  # release多了一次，但是少了这个有时候就会deadlock；
+            # self.mutex.release()  # release多了一次，但是少了这个有时候就会deadlock；
             # 原因 应该是finished会占用一个吗？
 
-        self.mutex.release()
+        # self.mutex.release()
 
     def finished(self):
 
-        self.mutex.acquire()
+        # self.mutex.acquire()
 
         self.cars_on_bridge -= 1 #car is now off the bridge
 
@@ -66,7 +66,7 @@ class OneLaneBridge(object):
             self.bridge_access.release()
             # self.dir = -1 #reset the direction so the next car will dictate the direction
 
-        self.mutex.release()
+        # self.mutex.release()
 
 
 

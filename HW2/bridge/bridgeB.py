@@ -1,3 +1,9 @@
+
+'''
+实际上看了早晨1h+下午2.5h：其实这个实现桥上只能过一辆车！！！。。。。。
+'''
+
+
 # coding=utf-8
 from threading import Thread, Lock, Semaphore
 import time
@@ -47,6 +53,9 @@ class OneLaneBridge(object):
             self.bridge_access.acquire()
 
             self.cars_on_bridge += 1
+            if self.cars_on_bridge > 1:
+                with self.printer_mutex:
+                    print 'Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh~~~~~~~~!'
             self.dir = direction
 
 

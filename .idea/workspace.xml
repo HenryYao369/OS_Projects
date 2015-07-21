@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2e4963-7e7b-4434-a389-e284828cb7e3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HW2/bridge2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/bridge.py" afterPath="$PROJECT_DIR$/HW2/bridge.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HW2/bridge2.py" afterPath="$PROJECT_DIR$/HW2/bridge2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OS_Projects.iws" />
@@ -39,10 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bridge.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bridge.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7388535" vertical-offset="222" max-vertical-offset="3885">
+            <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="3885">
               <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <element signature="e#25#81#0" expanded="true" />
@@ -51,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bridge2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bridge2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HW2/bridge2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2745">
-              <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+            <state vertical-scroll-proportion="4.9044585" vertical-offset="0" max-vertical-offset="2940">
+              <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -139,8 +138,8 @@
         <option value="$PROJECT_DIR$/HW2/paint.py" />
         <option value="$PROJECT_DIR$/HW2/parcount.py" />
         <option value="$PROJECT_DIR$/HW1/parcount.py" />
-        <option value="$PROJECT_DIR$/HW2/bridge2.py" />
         <option value="$PROJECT_DIR$/HW2/bridge.py" />
+        <option value="$PROJECT_DIR$/HW2/bridge2.py" />
       </list>
     </option>
   </component>
@@ -679,7 +678,7 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1046,22 +1045,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/bridge2.py">
+    <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2274" max-vertical-offset="2745">
-          <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="3885">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#25#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW2/bridge.py">
+    <entry file="file://$PROJECT_DIR$/HW2/bridge2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7388535" vertical-offset="222" max-vertical-offset="3885">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        <state vertical-scroll-proportion="4.9044585" vertical-offset="0" max-vertical-offset="2940">
+          <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
           <folding>
-            <element signature="e#25#81#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -57,17 +57,23 @@ class OneLaneBridge(object):
             self.start_count += 1
 
         if direction == 1:  # toward right
-
             with self.gate_direction_mutex:
-
                 if self.gate_direction == 1:
                     with self.driving_right_num_mutex:
                         self.driving_right_num += 1
 
                 elif self.gate_direction == 0:
-                    with self.waiting_to_right_num_mutex:
-                        self.waiting_to_right_num += 1
-                    self.sema_right.acquire()
+                    with self.driving_left_num_mutex:
+                        print 'hey!'
+                        if self.driving_left_num == 0:
+                            self.gate_direction = 1
+                            with self.driving_right_num_mutex:
+                                self.driving_right_num += 1
+                        else:
+                            with self.waiting_to_right_num_mutex:
+                                self.waiting_to_right_num += 1
+                            self.sema_right.acquire()
+
 
                 else:
                     print 'error 2'
@@ -79,9 +85,16 @@ class OneLaneBridge(object):
                         self.driving_left_num += 1
 
                 elif self.gate_direction == 1:
-                    with self.waiting_to_left_num_mutex:
-                        self.waiting_to_left_num += 1
-                    self.sema_left.acquire()
+                    with self.driving_right_num_mutex:      # qipa
+                        print 'ha~'
+                        if self.driving_right_num == 0:
+                            self.gate_direction = 0
+                            with self.driving_left_num_mutex:
+                                self.driving_left_num += 1
+                        else:
+                            with self.waiting_to_left_num_mutex:
+                                self.waiting_to_left_num += 1
+                            self.sema_left.acquire()
 
                 else:
                     print 'error 1'
@@ -118,7 +131,7 @@ class OneLaneBridge(object):
                     if self.driving_right_num < 0:
                         print 'error 3'
 
-            if self.gate_direction == 0:
+            elif self.gate_direction == 0:
 
                 with self.driving_left_num_mutex:
                     if self.driving_left_num > 0:
@@ -136,9 +149,10 @@ class OneLaneBridge(object):
                     # elif self.driving_left_num == 0:
                     #     pass
 
-                    else:
+                    if self.driving_left_num < 0:
                         print 'error 4'
-
+            else:
+                print 'gate direction(status) error!'
 
         with self.printer_mutex:
             print 'finish ' + str(self.fin_count)
@@ -148,7 +162,7 @@ class OneLaneBridge(object):
 class Car(Thread):
     def __init__(self, bridge):
         Thread.__init__(self)
-        self.direction = 1 #random.randrange(2)
+        self.direction = random.randrange(2)
         self.wait_time = random.uniform(0.1,0.5)
         self.bridge    = bridge
 
@@ -169,7 +183,7 @@ class Car(Thread):
 if __name__ == "__main__":
 
     judd_falls = OneLaneBridge()
-    for i in range(100):
+    for i in range(10):
         Car(judd_falls).start()
 
 # vim:expandtab:tabstop=8:shiftwidth=4:softtabstop=4

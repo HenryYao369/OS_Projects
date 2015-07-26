@@ -56,16 +56,18 @@ class OneLaneBridge(object):
             print 'enter_cross:' + str(self.start_count),'direction:', direction
             self.start_count += 1
 
-        if direction == 1:  # toward right
-            with self.gate_direction_mutex:
+        with self.gate_direction_mutex:
+            if direction == 1:  # toward right
+                # with self.gate_direction_mutex:
                 if self.gate_direction == 1:
                     with self.driving_right_num_mutex:
                         self.driving_right_num += 1
 
                 elif self.gate_direction == 0:
                     with self.driving_left_num_mutex:
-                        print 'hey!'
+
                         if self.driving_left_num == 0:
+                            print 'changing gate dir:0->1 (right)!'
                             self.gate_direction = 1
                             with self.driving_right_num_mutex:
                                 self.driving_right_num += 1
@@ -76,18 +78,19 @@ class OneLaneBridge(object):
 
 
                 else:
-                    print 'error 2'
+                        print 'error 2'
 
-        elif direction == 0:  # toward left
-            with self.gate_direction_mutex:
+            elif direction == 0:  # toward left
+                # with self.gate_direction_mutex:
                 if self.gate_direction == 0:
                     with self.driving_left_num_mutex:
                         self.driving_left_num += 1
 
                 elif self.gate_direction == 1:
                     with self.driving_right_num_mutex:      # qipa
-                        print 'ha~'
+
                         if self.driving_right_num == 0:
+                            print 'changing gate dir:1->0 (left)!'
                             self.gate_direction = 0
                             with self.driving_left_num_mutex:
                                 self.driving_left_num += 1
@@ -99,8 +102,8 @@ class OneLaneBridge(object):
                 else:
                     print 'error 1'
 
-        else:
-            print 'At cross function: direction error!'
+            else:
+                print 'At cross function: direction error!'
 
 
 

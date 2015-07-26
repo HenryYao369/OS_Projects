@@ -1,16 +1,18 @@
+# coding=utf-8
 
 '''
 实际上看了早晨1h+下午2.5h：其实这个实现桥上只能过一辆车！！！。。。。。
 '''
 
 
-# coding=utf-8
 from threading import Thread, Lock, Semaphore
 import time
 import random
 
 north = 0
 south = 1
+
+lock = Lock()
 
 class OneLaneBridge(object):
     """
@@ -46,16 +48,22 @@ class OneLaneBridge(object):
         if(direction == self.dir):
             if(self.cars_on_bridge == 0):
                 self.bridge_access.acquire()
+
             self.cars_on_bridge += 1
+            # lock.acquire()
+            # if self.cars_on_bridge > 1:
+            #     with self.printer_mutex:
+            #         print 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!'
+            # lock.release()
 
         else:
 
             self.bridge_access.acquire()
 
             self.cars_on_bridge += 1
-            if self.cars_on_bridge > 1:
-                with self.printer_mutex:
-                    print 'Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh~~~~~~~~!'
+            # if self.cars_on_bridge > 1:
+            #     with self.printer_mutex:
+            #         print 'Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh~~~~~~~~!'
             self.dir = direction
 
 
@@ -76,7 +84,7 @@ class OneLaneBridge(object):
 class Car(Thread):
     def __init__(self, bridge):
         Thread.__init__(self)
-        self.direction = random.randrange(2)
+        self.direction = 1 #random.randrange(2)
         self.wait_time = random.uniform(0.1,0.5)
         self.bridge    = bridge
 

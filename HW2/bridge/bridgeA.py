@@ -43,6 +43,10 @@ class OneLaneBridge(object):
             if(self.cars_on_bridge == 0):
                 self.bridge_access.acquire()
             self.cars_on_bridge += 1
+            if self.cars_on_bridge > 1:
+                with self.printer_mutex:
+                    print 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!'
+
         else:
             self.mutex.release()
 
@@ -50,6 +54,9 @@ class OneLaneBridge(object):
 
             self.mutex.acquire()
             self.cars_on_bridge += 1
+            if self.cars_on_bridge > 1:
+                with self.printer_mutex:
+                    print 'Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh~~~~~~~~!!'
             self.dir = direction
             self.mutex.release()  # release多了一次，但是少了这个有时候就会deadlock；
             # 原因 应该是finished会占用一个吗？

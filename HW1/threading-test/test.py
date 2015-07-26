@@ -1,6 +1,6 @@
 __author__ = 'Hengzhi'
 
-from threading import Semaphore
+from threading import Thread, Semaphore
 
 test_sema = Semaphore(0)
 test_sema.acquire()

@@ -1,5 +1,6 @@
-
+# coding=utf-8
 import time
+import sys
 
 ################################################################################
 ## Shared paging simulation infrastructure #####################################
@@ -103,9 +104,16 @@ class OPT(Pager):
        performed"""
     Pager.__init__(self, num_frames, page_size)
     # TODO
-    self.trace = trace
     self.trace_ptr = -1
     self.future_pos = [None for i in xrange(num_frames)]
+
+
+    self.list_of_list = [[] for i in xrange(1024/self.page_size+1)]  # 这是一个查找表，以空间换时间！
+
+    for i in xrange(len(trace)):
+        self.list_of_list[trace[i]/self.page_size].append(i)
+    # for list in self.list_of_list:
+    #     print list
 
 
   def access(self, address):
@@ -124,20 +132,24 @@ class OPT(Pager):
 
     for i in xrange(self.num_frames):
 
-        page_num = self.frames[i]
+      page_num_to_lookup = self.frames[i]
 
-        for pos in range(self.trace_ptr+1,len(self.trace)):
+      while True:
+        if len(self.list_of_list[page_num_to_lookup]) < 1:
+          self.future_pos[i] = sys.maxint
+          break
 
-            self.future_pos[i] = pos
-            if page_num == self.trace[pos]:
-                break
+        if self.list_of_list[page_num_to_lookup][0] <= self.trace_ptr:
+          self.list_of_list[page_num_to_lookup].remove(self.list_of_list[page_num_to_lookup][0])
+
+        else:
+          self.future_pos[i] =  self.list_of_list[page_num_to_lookup][0]
+          break
+
 
 
     index_to_evict = self.future_pos.index(max(self.future_pos))
     return index_to_evict
-
-
-
 
 
 
@@ -163,7 +175,10 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   trace = [int(line) for line in args.trace.readlines()]
+  # 非常简洁的一种写法，学习！  对每一行，读，并强制转化为int。  有点lambda exp的感觉？！
 
+
+  start_time = time.time()
   pager = None
   if args.algorithm == "LRU":
     pager = LRU(args.num_frames, args.page_size)
@@ -172,7 +187,7 @@ if __name__ == '__main__':
   elif args.algorithm == "OPT":
     pager = OPT(args.num_frames, args.page_size, trace)
 
-  start_time = time.time()
+
   for addr in trace:
     frame = pager.access(addr)
     assert(pager.frames[frame] == addr / args.page_size)

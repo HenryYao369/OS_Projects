@@ -12,9 +12,12 @@ class Pager(object):
      The Pager keeps track of the number of page faults."""
   def __init__(self, num_frames, page_size):
     self.page_faults = 0
+
     self.frames      = [None for i in range(num_frames)]
     self.num_frames  = num_frames
+
     self.page_size   = page_size
+
 
   def evict(self):
     """return the frame number of a page to be evicted."""
@@ -25,7 +28,7 @@ class Pager(object):
     """loads the page containing the address into memory and returns the
     frame number of the loaded page."""
 
-    page_num = address / self.page_size
+    page_num = address / self.page_size  # page_num will be casted into integer
     if page_num in self.frames:
       # hit
       return self.frames.index(page_num)
@@ -91,8 +94,9 @@ class OPT(Pager):
 
 if __name__ == '__main__':
   import argparse
-
   parser = argparse.ArgumentParser(description="simulate various page replacement algorithms")
+
+
   parser.add_argument("-s","--page-size", help="the number of pages",
                       type=int, required=True)
   parser.add_argument("-n","--num-frames", help="the number of frames",
@@ -101,6 +105,7 @@ if __name__ == '__main__':
                       help="the replacement strategy to use")
   parser.add_argument("trace",  help="the sequence of addresses to access.  Should be a filename containing one address per line.",
                       type=file)
+
   args = parser.parse_args()
 
   trace = [int(line) for line in args.trace.readlines()]

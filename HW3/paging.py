@@ -103,14 +103,40 @@ class OPT(Pager):
        performed"""
     Pager.__init__(self, num_frames, page_size)
     # TODO
+    self.trace = trace
+    self.trace_ptr = -1
+    self.future_pos = [None for i in xrange(num_frames)]
+
 
   def access(self, address):
     # TODO: you may wish to do additional bookkeeping here.
+    self.trace_ptr += 1
+
+
     return Pager.access(self, address)
 
   def evict(self):
     # TODO
     # raise NotImplemented
+
+    if None in self.frames: # still during initialization
+        return self.frames.index(None)
+
+    for i in xrange(self.num_frames):
+
+        page_num = self.frames[i]
+
+        for pos in range(self.trace_ptr+1,len(self.trace)):
+
+            self.future_pos[i] = pos
+            if page_num == self.trace[pos]:
+                break
+
+
+    index_to_evict = self.future_pos.index(max(self.future_pos))
+    return index_to_evict
+
+
 
 
 
@@ -146,11 +172,13 @@ if __name__ == '__main__':
   elif args.algorithm == "OPT":
     pager = OPT(args.num_frames, args.page_size, trace)
 
+  start_time = time.time()
   for addr in trace:
     frame = pager.access(addr)
     assert(pager.frames[frame] == addr / args.page_size)
 
   print("total page faults: %i" % pager.page_faults)
+  print "elapsed time: ", time.time() - start_time
 
 # vim: ts=2 sw=2 ai et list
 

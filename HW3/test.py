@@ -1,6 +1,6 @@
 
 
-ts = [2,3,5,None,6,None]
+ts = [6,5,5,6,6,6]
 
 
 minindex = ts.index(min(ts))
@@ -9,3 +9,4 @@ maxindex = ts.index(max(ts))
 
 
 print minindex,maxindex
+print len(ts)

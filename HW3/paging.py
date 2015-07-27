@@ -1,4 +1,6 @@
 
+import time
+
 ################################################################################
 ## Shared paging simulation infrastructure #####################################
 ################################################################################
@@ -19,24 +21,29 @@ class Pager(object):
     self.page_size   = page_size
 
 
+  # protected
   def evict(self):
     """return the frame number of a page to be evicted."""
     # This will be implemented in your subclasses below.
     raise NotImplementedError
 
+
+  # public
   def access(self, address):
     """loads the page containing the address into memory and returns the
     frame number of the loaded page."""
 
-    page_num = address / self.page_size  # page_num will be casted into integer
+    page_num = address / self.page_size  # page_num will be casted into integer!
     if page_num in self.frames:
       # hit
       return self.frames.index(page_num)
     else:
       # fault
       self.page_faults += 1
+
       index = self.evict()
       self.frames[index] = page_num
+
       return index
 
 
@@ -48,28 +55,46 @@ class FIFO(Pager):
   def __init__(self, num_frames, page_size):
     Pager.__init__(self, num_frames, page_size)
     # TODO
+    self.ptr = self.num_frames - 1
+
 
   def access(self, address):
     # TODO: you may wish to do additional bookkeeping here.
+
     return Pager.access(self, address)
 
   def evict(self):
     # TODO
-    raise NotImplemented
+    # raise NotImplemented
+    self.ptr = (self.ptr +1) % self.num_frames
+    return self.ptr
 
 
 class LRU(Pager):
   def __init__(self, num_frames, page_size):
     Pager.__init__(self, num_frames, page_size)
     # TODO
+    self.ts = [None for i in xrange(self.num_frames)]  # ts: timestamp
 
   def access(self, address):
     # TODO: you may wish to do additional bookkeeping here.
+
+    page_num = address / self.page_size  # page_num will be casted into integer!
+    if page_num in self.frames:
+        # hit
+        index = self.frames.index(page_num)
+        self.ts[index] = time.time()
+
     return Pager.access(self, address)
 
   def evict(self):
     # TODO
-    raise NotImplemented
+    # raise NotImplemented
+
+    index = self.ts.index(min(self.ts))  # note:min(2,None) => None, so here we don't have to judge 'None' -- Python is great!
+    self.ts[index] = time.time()
+    return index
+
 
 
 class OPT(Pager):
@@ -85,7 +110,10 @@ class OPT(Pager):
 
   def evict(self):
     # TODO
-    raise NotImplemented
+    # raise NotImplemented
+
+
+
 
 
 ################################################################################
@@ -109,6 +137,7 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   trace = [int(line) for line in args.trace.readlines()]
+
   pager = None
   if args.algorithm == "LRU":
     pager = LRU(args.num_frames, args.page_size)

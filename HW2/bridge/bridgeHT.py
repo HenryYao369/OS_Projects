@@ -1,3 +1,6 @@
+
+#  HT's solution.
+
 from threading import Thread, Lock, Semaphore, Condition
 import time
 import random
@@ -15,7 +18,7 @@ sgate = Semaphore()
 # signal semaphore
 saccess = Semaphore()
 
-#firt car came to wait queue is the representative
+#  first car came to wait queue is the representative
 srep = Semaphore()
 
 
@@ -30,7 +33,7 @@ class OneLaneBridge(object):
 
     def __init__(self):
         # TODO
-        # initialization : no car on brige, direction -1
+        # initialization : no car on bridge, direction -1
         
         # protected by sgate and srep(for waiting zone)
         self.carnum = 0

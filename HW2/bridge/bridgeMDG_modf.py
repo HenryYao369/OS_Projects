@@ -76,11 +76,11 @@ class OneLaneBridgeSema(object):
         # signal that the bridge is empty
         self.bridge_signal = Semaphore(0)
 
-        # protected by bridge_mutex
+        # protected by bridge_signal
         self.direction    = None
 
         # num_crossing[d] : number of cars currently crossing in direction d
-        # protected by head_of_bridge_mutex
+        # protected by end_mutex
         self.num_crossing = [0, 0]
         self.end_mutex    = [Semaphore(1), Semaphore(1)]
 
@@ -106,7 +106,7 @@ class OneLaneBridgeSema(object):
         # between when this thread returned from cross() and when it reaches
         # this line.
 
-        P(self.head_of_bridge[self.direction])
+        P(self.end_mutex[self.direction])
 
         self.num_crossing[self.direction] -= 1
 
@@ -114,13 +114,13 @@ class OneLaneBridgeSema(object):
         if self.num_crossing[self.direction] == 0:
             V(self.bridge_signal)
 
-        self.head_of_bridge[self.direction].release()
+        V(self.end_mutex[self.direction])
 
 
 class Car(Thread):
     def __init__(self, bridge):
         Thread.__init__(self)
-        self.direction = random.randint(1)
+        self.direction = random.randrange(2)
         self.wait_time = random.uniform(0.1,0.5)
         self.bridge    = bridge
 

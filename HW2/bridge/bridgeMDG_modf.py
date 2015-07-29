@@ -1,4 +1,4 @@
-from threading import Thread, Lock, Semaphore
+from threading import Thread, Lock, Semaphore, Condition
 import time
 import random
 
@@ -20,13 +20,13 @@ class OneLaneBridgeMonitor(object):
         self.direction    = None
         self.num_crossing = 0
 
-        self.is_safe = [Condition(lock), Condition(lock)]
+        self.is_safe = [Condition(self.lock), Condition(self.lock)]
         # predicate[north]: direction == north or num_crossing == 0
         # predicate[south]: direction == south or num_crossing == 0
 
     def cross(self,direction):
         with self.lock:
-            while not (self.direction == direction or num_crossing == 0):
+            while not (self.direction == direction or self.num_crossing == 0):
                 self.is_safe[direction].wait()
 
             self.num_crossing += 1
@@ -121,21 +121,21 @@ class Car(Thread):
     def __init__(self, bridge):
         Thread.__init__(self)
         self.direction = random.randint(1)
-        self.wait_time = random.randfloat(0.5)
+        self.wait_time = random.uniform(0.1,0.5)
         self.bridge    = bridge
 
     def run(self):
-        thread.sleep(self.wait_time)
-        bridge.cross(self.direction)
+        time.sleep(self.wait_time)
+        self.bridge.cross(self.direction)
 
-        thread.sleep(0.01)
+        time.sleep(0.01)
 
-        bridge.finished()
+        self.bridge.finished()
 
 
 if __name__ == "__main__":
 
-    judd_falls = OneLaneBridge()
+    judd_falls = OneLaneBridgeSema()
     for i in range(100):
         Car(judd_falls).start()
 

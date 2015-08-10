@@ -35,12 +35,16 @@ class ThreadedWorker(Thread):
             print msg_list
 
             if msg_list[0] == 'GET':
+                sema.acquire()
                 self.client.send(MOTD)
+                sema.release()
                 break
             elif msg_list[0] == 'SET':
+                sema.acquire()
                 MOTD = msg_list[1]
                 print 'MOTD has been set to: ', MOTD
                 self.client.send('OK')
+                sema.release()
                 break
             else:
                 print "error not parsed!"
@@ -100,16 +104,13 @@ def main():
 
     while True:
     #服务器套接字通过socket的accept方法等待客户请求一个连接
-        client,address = sock.accept()
-
-        sema.acquire()
+        client, address = sock.accept()
 
         # t = threading.Thread(target=thread_work, args=(client, address))
         t = ThreadedWorker(client, address)
         t.start()
-        t.join()
+        # t.join()
 
-        sema.release()
 
 
 if __name__ == '__main__':

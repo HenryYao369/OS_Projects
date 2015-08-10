@@ -1,4 +1,5 @@
 
+import ast
 
 #
 # import csv
@@ -10,8 +11,21 @@
 #     for i,f in enumerate(fields):
 #          print f
 
-a = list("[1,2]")
-print a
+
+msg = ast.literal_eval("['1',2,'haha']")
 
 
+# print msg
+#
+#
+# for item in msg:
+#     print type(item)
+
+
+a = "my name is,Bob"
+
+print a.split()
+
+b = "GET"
+print b.split()
 
